@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
 
+@font-face {
+  font-family: "FastFont";
+  src: url("assets/Fast_Sans.ttf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("assets/OpenDyslexic-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
 /* Light Mode */
 :root {
   --black-background: #000000;
@@ -24,10 +36,10 @@
 }
 
 body {
-  background-color: #9bc2ac;
-  font-family: "Funnel Display";
+  background-color: var(--light-background);
   font-size: 16px;
   margin: 0 auto;
+  font-family: "Funnel Display", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* NAVBAR */
@@ -50,12 +62,13 @@ nav {
   background: none;
   border: none;
   font-size: 2rem;
-  color: black;
+  color: var(--light-text);
 }
 
 #settings-btn {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .nav-left ul,
@@ -83,7 +96,7 @@ nav {
 
 .nav-left a,
 .nav-right a {
-  color: #35664f;
+  color: var(--medium-text);
   padding: 1rem;
   text-decoration: none;
   border-radius: 2rem;
@@ -92,10 +105,140 @@ nav {
 
 .nav-left ul a:hover,
 .nav-right ul a:hover {
-  background-color: #89e2a1;
-  color: #35664f;
+  background-color: var(--bright-background);
+  color: var(--medium-text);
   font-weight: bold;
 }
+
+.nav-left ul.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: var(--white-background);
+  gap: 0.8rem;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+/* MODAL */
+
+#modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.763);
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  gap: 0.8rem;
+  background-color: var(--white-background);
+  border-radius: 20px;
+  border: 6px solid var(--medium-background);
+  padding: 1rem 2rem;
+}
+
+.modal h2 {
+  border-bottom: 2px solid var(--light-background);
+}
+
+.modal-section {
+  color: var(--black-text);
+}
+
+#modal-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+#modal-link-1 {
+  font-family: "FastFont", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#modal-link-2 {
+  font-family: "OpenDyslexic", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#modal-1 label,
+#modal-1 select,
+#modal-2 p,
+#modal-3 p {
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+#modal-link-1,
+#modal-link-2 {
+  margin: 0;
+}
+
+.modal a {
+  color: var(--dark-text);
+}
+
+.modal a:hover {
+  text-decoration: underline;
+  transition: text-decoration 300ms ease-in-out;
+}
+
+select {
+  max-width: min-content;
+  margin: 0 auto;
+}
+
+.modal-option {
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 0.5rem 0.8rem;
+  background-color: var(--medium-background);
+}
+
+.modal-option:hover {
+  cursor: pointer;
+  color: var(--white-text);
+  transition: color 300ms ease-in-out;
+}
+
+#close-btn {
+  border-radius: 8px;
+  background-color: transparent;
+  border: transparent;
+  padding: 0.2rem 0.5rem;
+}
+
+#close-btn:hover {
+  background-color: var(--alert);
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+}
+
+#reset-btn {
+  border-radius: 8px;
+  background-color: transparent;
+  border: transparent;
+  padding: 0.5rem 0.8rem;
+}
+
+#reset-btn:hover {
+  background-color: var(--alert);
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+}
+
 /*
 #settings-btn {
   background-color: transparent;
@@ -214,7 +357,7 @@ nav {
   max-width: 50%;
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.845);
-  color: #000000;
+  color: var(--black-text);
   border-radius: 20px;
   z-index: 10;
 }
@@ -235,8 +378,8 @@ nav {
   text-decoration: none;
   font-size: 1.5rem;
   padding: 0.8rem 1.5rem;
-  background-color: #89e2a1;
-  color: #234234;
+  background-color: var(--bright-background);
+  color: var(--dark-background);
   border: 2px solid transparent;
   border-radius: 2rem;
   transition: all 0.5s ease-in-out;
@@ -247,7 +390,7 @@ nav {
 
 #more-btn:hover {
   background-color: transparent;
-  border: 2px solid #234234;
+  border: 2px solid var(--dark-background);
 }
 
 /* CARDS */
@@ -312,7 +455,10 @@ nav {
 /* CONTACT */
 
 .contact-us {
-  background-image: url("https://placehold.co/2000x600/e5e5e5/ffffff?text=img");
+  background-image: url("https://images.unsplash.com/photo-1720214963157-1723026a0ff8?q=80&w=1530&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: 0 -4rem;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: space-between;
   padding: 2.5rem;
@@ -323,6 +469,7 @@ nav {
   justify-content: center;
   margin: 2rem auto;
   font-size: 5rem;
+  color: var(--white-text);
 }
 
 form {
@@ -370,7 +517,7 @@ form {
 .footer {
   display: flex;
   justify-content: space-evenly;
-  background-color: #ffffff;
+  background-color: var(--white-background);
   list-style: none;
   gap: 1.5rem;
   padding: 1rem;
@@ -384,13 +531,12 @@ form {
   list-style: none;
   text-decoration: none;
   gap: 2rem;
-  color: #35664f;
-}
+  color: var(--medium-text);}
 
 /* @MEDIA */
 
 @media (max-width: 768px) {
-  .hamburger-icon {
+  #hamburger-btn {
     display: block;
   }
 
@@ -398,11 +544,12 @@ form {
     justify-content: flex-start;
   }
 
-  .logo {
+  .logo,
+  .logo img {
     position: unset;
-    left: 0;
     justify-content: flex-start;
-    margin-left: 1rem;
+    margin: 0;
+    padding: 0;
   }
 
   .nav-left ul {
@@ -419,14 +566,19 @@ form {
     border-radius: 0;
     padding-bottom: 0;
     transition: color 0.5s ease-in-out;
-    border-bottom: 2px solid #89e2a1;
-    color: #35664f;
-    font-weight: bold;
+    border-bottom: 2px solid var(--bright-background);
+    color: var(--medium-text);
+        font-weight: bold;
   }
 
   .nav-right a {
     padding: 0;
     margin: auto 0.5rem;
+  }
+
+  .modal {
+    width: 100%;
+
   }
 
   .carousel,
@@ -445,8 +597,8 @@ form {
     left: 0;
     max-width: 100%;
     border-radius: 0;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--white-background);
+    color: var(--black-text);
   }
 
   .overlay h2 {
@@ -473,11 +625,13 @@ form {
   }
 
   .contact-us {
+    background-position: top;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0;
+    height: auto;
   }
 
   .contact-us h2 {
@@ -486,7 +640,6 @@ form {
 
   form {
     width: 90%;
-    margin: 0 auto;
     justify-content: center;
     padding: 0.5rem 0;
   }
@@ -518,85 +671,178 @@ body.dark-theme {
   background-color: var(--dark-background);
 }
 
-body.dark-theme header,
-body.dark-theme footer,
-body.dark-theme footer ul,
-body.dark-theme footer a {
-  background-color: var(--black-background);
-  color: var(--bright-text);
-}
-
 body.dark-theme .nav-left ul,
 body.dark-theme .nav-left li,
 body.dark-theme .nav-left a,
-body.dark-theme .nav-right a {
-  color: var(--medium-text);
+body.dark-theme .nav-right a,
+body.dark-theme .footer ul,
+body.dark-theme .footer a,
+body.dark-theme #settings-btn {
+  color: var(--light-text);
 }
 
-body.dark-theme .nav-left a:hover,
+body.dark-theme #settings-btn:hover {
+  color: var(--bright-background);
+}
+
+body.dark-theme .nav-left ul a:hover,
 body.dark-theme .nav-right a:hover {
-  background-color: var(--medium-background);
+  background-color: var(--light-background);
+  color: var(--black-text);
+}
+
+body.dark-theme #hamburger-btn {
+  color: var(--light-background);
+}
+
+body.dark-theme .nav-left ul.active {
+  background-color: var(--black-background);
+  color: var(--light-text);
+}
+
+body.dark-theme .modal {
+  background-color: var(--dark-background);
+  border: 6px solid var(--black-background);
+}
+
+body.dark-theme .modal p,
+body.dark-theme .modal a,
+body.dark-theme .modal h2,
+body.dark-theme .modal label {
+  color: var(--black-text);
+}
+
+body.dark-theme .modal button,
+body.dark-theme .modal select {
+  background-color: var(--black-background);
+  color: var(--white-text);
+}
+
+body.dark-theme .modal button:hover,
+body.dark-theme .modal select:hover {
+  border: 2px solid var(--white-text);
+}
+
+body.dark-theme .overlay {
+  background-color: rgba(0, 0, 0, 0.845);
+  color: var(--white-text);
+}
+
+body.dark-theme #more-btn {
+  background-color: transparent;
+  border: 2px solid var(--bright-background);
+  color: var(--bright-text);
+}
+
+body.dark-theme #more-btn:hover {
+  background-color: var(--bright-background);
   color: var(--black-text);
 }
 
 body.dark-theme .card {
   background-color: var(--black-background);
-  box-shadow: 0 20px 40px -14px rgba(255, 255, 255, 0.883);
 }
 
-body.dark-theme .card_title,
-body.dark-theme .card_text {
+body.dark-theme .card .card_title,
+body.dark-theme .card .card_text {
   color: var(--white-text);
 }
 
 body.dark-theme form {
-  background-color: rgba(53, 102, 79, 0.4);
+  color: var(--white-text);
+  background-color: rgba(35, 66, 52, 0.4);
+}
+
+body.dark-theme header,
+body.dark-theme .footer {
+  background-color: var(--black-background);
 }
 
 /* BLACK AND WHITE THEME */
 
 body.black-white-theme {
   --black-background: #000000;
-  --white-background: #000000;
+  --white-background: #ffffff;
   --accent-background: #9bc2ac;
 
   --white-text: #ffffff;
   --black-text: #000000;
   --accent-text: #9bc2ac;
 
-  background-color: var(--black-background);
+  background-color: var(--white-background);
 }
 
-body.black-white-theme header,
-body.black-white-theme footer,
-body.black-white-theme footer ul,
-body.black-white-theme footer a {
-  background-color: var(--white-background);
-  color: var(--black-text);
-}
 
 body.black-white-theme .nav-left ul,
 body.black-white-theme .nav-left li,
 body.black-white-theme .nav-left a,
-body.black-white-theme .nav-right a {
+body.black-white-theme .nav-right a,
+body.black-white-theme .footer ul,
+body.black-white-theme .footer a, body.black-white-theme #settings-btn {
+  color: var(--white-text);
+}
+
+body.black-white-theme #settings-btn:hover {
+  color: var(--bright-background);
+}
+
+body.black-white-theme .nav-left ul a:hover,
+body.black-white-theme .nav-right a:hover {
+  color: var(--black-text);
+  background-color: var(--white-background);
+}
+
+body.black-white-theme #hamburger-btn {
+  color: var(--white-background);
+}
+
+body.black-white-theme .nav-left:active {
+color: var(--black-text);
+}
+
+body.black-white-theme .modal {
+  background-color: var(--white-background);
+  border: 6px solid var(--black-background);
+}
+
+body.black-white-theme .modal p,
+body.black-white-theme .modal a,
+body.black-white-theme .modal h2,
+body.black-white-theme .modal label {
   color: var(--black-text);
 }
 
-body.black-white-theme .nav-left a:hover,
-body.black-white-theme .nav-right a:hover {
+body.black-white-theme .modal button,
+body.black-white-theme .modal select {
   background-color: var(--black-background);
   color: var(--white-text);
 }
 
+body.black-white-theme .modal button:hover,
+body.black-white-theme .modal select:hover {
+  border: 2px solid var(--white-text);
+}
+
 body.black-white-theme .card {
-  background-color: var(--white-background);
-  box-shadow: 0 20px 40px -14px rgba(127, 127, 127, 0.883);
+  background-color: var(--black-background);
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.883);
+}
+
+body.black-white-theme .card .card_title,
+body.black-white-theme .card .card_text {
+  color: var(--white-text);
 }
 
 body.black-white-theme .card_title,
 body.black-white-theme .card_text {
   color: var(--black-text);
 }
+
 body.black-white-theme form {
-  background-color: rgba(127, 127, 127, 0.883);
+  background-color: rgba(0, 0, 0, 0.883);
+  color: var(--white-text);
+}
+
+body.black-white-theme header, body.black-white-theme .footer {
+  background-color: var(--black-background);
 }
