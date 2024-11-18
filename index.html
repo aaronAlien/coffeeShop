@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <title>Document</title>
 </head>
+
+<!-- 
+NAV
+-->
+
 <header>
     <nav>
       <div class="hamburger-icon">
@@ -14,6 +23,9 @@
       </div>
       <div class="nav-left">
         <ul>
+            <li><button type="button" id="settings-btn">
+                <i class="fa-solid fa-gear fa-xl" title="open settings"></i>
+              </button></li>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
@@ -26,31 +38,43 @@
   
       <div class="nav-right">
         <a href="#">Login</a>
-        <a href="#"><i class="social-icon">IG</i></a>
-        <a href="#"><i class="basket-icon">🛒</i></a>
+        <a href="#"><i class="fa-brands fa-instagram fa-xl" title="open settings"></i>
+        </a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
       </div>
     </nav>
   </header>
-  
+
+  <!--  
+  MAIN
+  -->
+
   <body>
+
+
+  <!--  HERO  -->
+  
     <section class='carousel'>
       <div class='carousel-slides'>
         <div class='slide-image active'>
-          <img src='https://placehold.co/2000x600/e5e5e5/ffffff?text=1' />
+          <img src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' />
         </div>
-        <div class='slide-image active'>
-          <img src='https://placehold.co/2000x600/e5e5e5/ffffff?text=2' />
+        <div class='slide-image'>
+          <img src='https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' />
         </div>
-        <div class='slide-image active'>
-          <img src='https://placehold.co/2000x600/e5e5e5/ffffff?text=3' />
+        <div class='slide-image'>
+          <img src='https://images.unsplash.com/photo-1515375295342-ead4ef91028f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' />
         </div>
-        <div class='overlay'>
-          <h2>Welcome</h2>
-          <p>discover our brands discover our brands discover our brands discover our </p>
-          <a href='#' id='more-btn'>Learn More</a>
-        </div>
+        
       </div>
     </section>
+    <div class='overlay'>
+        <h2>Welcome</h2>
+        <p>this is a super cool super trendy coffee shop. let's drink too much coffee coffee and work from home. </p>
+        <a href='#' id='more-btn'>Learn More</a>
+      </div>
+  
+  <!--  CARDS  -->
   
     <section>
   
@@ -59,9 +83,9 @@
   
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="https://marketplace.canva.com/EAF3TwvrLWM/1/0/1600w/canva-black-and-white-retro-playful-simple-circle-coffee-logo-AgLG6U7KlwA.jpg" width="300px"></div>
+              <div class="card_image"><img src="https://images.unsplash.com/photo-1524697692318-d29778641402?q=80&w=1617&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="300px"></div>
               <div class="card_content">
-                <h2 class="card_title">Card</h2>
+                <h2 class="card_title">Shop our blends</h2>
                 <p class="card_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m</p>
   
               </div>
@@ -70,9 +94,9 @@
   
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="https://marketplace.canva.com/EAF3TwvrLWM/1/0/1600w/canva-black-and-white-retro-playful-simple-circle-coffee-logo-AgLG6U7KlwA.jpg" width="300px"></div>
+              <div class="card_image"><img src="https://images.unsplash.com/photo-1639117054696-d57bc8949d06?q=80&w=1585&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="300px"></div>
               <div class="card_content">
-                <h2 class="card_title">Card</h2>
+                <h2 class="card_title">Meet the team</h2>
                 <p class="card_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m</p>
   
               </div>
@@ -82,7 +106,7 @@
             <div class="card">
               <div class="card_image"><img src="https://marketplace.canva.com/EAF3TwvrLWM/1/0/1600w/canva-black-and-white-retro-playful-simple-circle-coffee-logo-AgLG6U7KlwA.jpg" width="300px"></div>
               <div class="card_content">
-                <h2 class="card_title">Card</h2>
+                <h2 class="card_title">News & Updates</h2>
                 <p class="card_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m</p>
   
               </div>
@@ -91,6 +115,8 @@
       </div>
     </section>
   
+  <!--  CONTACT  -->
+
     <section class="contact-us">
       <h2>Contact Us</h2>
       <form id="contact-form">
@@ -113,6 +139,9 @@
         <button type="submit" id='send-btn'>Send</button>
       </form>
     </section>
+
+  <!--  FOOTER  -->
+
     <footer>
       <div class="footer">
         <ul>
