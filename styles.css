@@ -20,6 +20,7 @@
   --bright-background: #89e2a1;
   --light-background: #9bc2ac;
   --white-background: #ffffff;
+  --alert: #a11212;
 
   --white-text: #ffffff;
   --light-text: #9bc2ac;
@@ -280,6 +281,91 @@ select {
   position: relative; /* to front */
 }
 
+.section-about {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 3rem auto;
+}
+
+.about-carousel {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.about-slides {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease-in-out;
+}
+
+.about-slide-image {
+  flex: 0 0 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+.about-slide-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+}
+
+.about-slide-image.active {
+  opacity: 1; /* active */
+  position: relative; /* to front */
+}
+
+.about-card {
+  background-color: var(--white-background);
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.883);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 2rem 1rem;
+  max-width: 80%;
+}
+
+.about-card_image img {
+  object-fit: cover;
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.about-card_content .about-card_title,
+.about-card_text {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.about-card_text {
+  max-width: 70%;
+  margin-bottom: 1.5rem;
+}
+
+.section-about span {
+  font-weight: bold;
+}
+
+.about-card_title {
+  font-size: 5rem;
+}
+
 .overlay {
   position: absolute;
   top: 50%;
@@ -335,6 +421,7 @@ select {
   justify-content: center;
   margin: 2.5rem auto;
 }
+
 
 .card_image img {
   max-height: 380px;
@@ -512,7 +599,6 @@ form {
 
   .modal {
     width: 100%;
-
   }
 
   .carousel,
@@ -535,7 +621,7 @@ form {
     color: var(--black-text);
   }
 
-  .overlay h2 {
+  .overlay h2, .about-card_title {
     font-size: 2.5rem;
   }
 
@@ -556,6 +642,11 @@ form {
   .ul-cards {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .about-card_text {
+    max-width: 100%;
+    margin: .8rem auto;
   }
 
   .contact-us {
@@ -594,6 +685,7 @@ body.dark-theme {
   --medium-background: #35664f;
   --bright-background: #89e2a1;
   --light-background: #9bc2ac;
+  --alert: #a11212;
 
   --white-text: #ffffff;
   --light-text: #9bc2ac;
@@ -687,9 +779,23 @@ body.dark-theme form {
   background-color: rgba(35, 66, 52, 0.4);
 }
 
+body.dark-theme #reset-btn {
+  color: var(--black-text);
+}
+
+body.dark-theme #reset-btn:hover {
+  background-color: var(--alert);
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+}
+
 body.dark-theme header,
 body.dark-theme .footer {
   background-color: var(--black-background);
+}
+
+body.dark-theme .about-card_title, body.dark-theme .about-card_text {
+  color: var(--light-text);
 }
 
 /* BLACK AND WHITE THEME */
@@ -698,6 +804,7 @@ body.black-white-theme {
   --black-background: #000000;
   --white-background: #ffffff;
   --accent-background: #9bc2ac;
+  --alert: #a11212;
 
   --white-text: #ffffff;
   --black-text: #000000;
@@ -724,14 +831,16 @@ body.black-white-theme .nav-left ul a:hover,
 body.black-white-theme .nav-right a:hover {
   color: var(--black-text);
   background-color: var(--white-background);
+  border-bottom: transparent;
 }
 
 body.black-white-theme #hamburger-btn {
   color: var(--white-background);
 }
 
-body.black-white-theme .nav-left:active {
-color: var(--black-text);
+body.black-white-theme .nav-left ul.active {
+  background-color: var(--black-background);
+  color: var(--light-text);
 }
 
 body.black-white-theme .modal {
@@ -777,6 +886,24 @@ body.black-white-theme form {
   color: var(--white-text);
 }
 
+body.black-white-theme #reset-btn {
+  color: var(--black-text);
+}
+
+body.black-white-theme #reset-btn:hover {
+  background-color: var(--alert);
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+}
+
 body.black-white-theme header, body.black-white-theme .footer {
   background-color: var(--black-background);
+}
+
+body.black-white-theme .about-card_title, body.black-white-theme .about-card_text {
+  color: var(--white-text);
+}
+
+body.black-white-theme .about-card {
+background-color: var(--black-background);
 }

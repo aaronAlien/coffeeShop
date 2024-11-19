@@ -25,6 +25,31 @@ hamburger.addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".slide-image");
 
+  if (slides.length === 0) return;
+
+  let currentIndex = 0;
+
+  function nextSlide() {
+    //remove
+    slides[currentIndex].classList.remove("active");
+
+    //update
+    currentIndex = (currentIndex + 1) % slides.length;
+
+    //add
+    slides[currentIndex].classList.add("active");
+  }
+
+  setInterval(nextSlide, 3000);
+});
+
+/* ABOUT - CAROUSEL */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".about-slide-image");
+
+  if (slides.length === 0) return;
+
   let currentIndex = 0;
 
   function nextSlide() {

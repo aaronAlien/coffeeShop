@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <title>Document</title>
+  </head>
+
+  <!-- 
+NAV
+-->
+
+  <header>
+    <nav>
+      <button id="hamburger-btn">☰</button>
+      <div class="nav-left">
+        <ul>
+          <li>
+            <button type="button" id="settings-btn">
+              <i class="fa-solid fa-gear fa-xl" title="open settings"></i>
+            </button>
+          </li>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="logo">
+        <a href="/index.html"
+          ><img
+            src="./assets/coffeeLogoWhite.png"
+            alt="Logo"
+            id="logo-img"
+            width="50"
+            height="50"
+        /></a>
+      </div>
+
+      <div class="nav-right">
+        <ul>
+          <li><a href="/login.html">Login</a></li>
+          <li>
+            <a href="#"
+              ><i
+                class="fa-brands fa-instagram fa-xl"
+                title="open settings"
+              ></i>
+            </a>
+          </li>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- SETTINGS MODAL -->
+
+  <div id="modal-container" aria-modal="true">
+    <div class="modal">
+      <button id="close-btn">
+        <i
+          class="fa-solid fa-close fa-xl"
+          aria-label="close settings"
+          title="close settings"
+        ></i>
+      </button>
+
+      <h2>CONFIGURE SETTINGS</h2>
+
+      <section class="modal-section" id="modal-1">
+        <label for="font-options">Font Style</label>
+        <select class="modal-option" name="font" id="font-options">
+          <option value="regular">Default</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Bionic Reading">Fast Font</option>
+          <option value="Dyslexic">Open Dyslexic</option>
+        </select>
+        <p id="modal-link-1">
+          <a href="https://born2root.github.io/Fast-Font/" target="_blank"
+            >Fast Font:</a
+          >
+          Highlights the first few letters of a word in bold.
+        </p>
+        <p id="modal-link-2">
+          <a href="https://opendyslexic.org/" target="_blank">Open Dyslexic:</a>
+          Letters have heavy weighted bottoms to indicate direction.
+        </p>
+      </section>
+
+      <section class="modal-section" id="modal-2">
+        <p>Font size</p>
+        <button class="modal-option" id="increase-btn">increase</button>
+        <button class="modal-option" id="decrease-btn">decrease</button>
+        <button class="modal-option" id="font-size-reset-btn">
+          reset size
+        </button>
+      </section>
+
+      <section class="modal-section" id="modal-3">
+        <p>Colour theme</p>
+        <button class="modal-option" id="light-theme">
+          light background (default)
+        </button>
+        <button class="modal-option" id="dark-theme">dark background</button>
+        <button class="modal-option" id="black-white-theme">
+          black and white
+        </button>
+      </section>
+
+      <button id="reset-btn">reset all</button>
+    </div>
+  </div>
+
+  <!--  
+  MAIN
+  -->
+
+  <body>
+    <section>
+      <div class="section-about">
+        <div class="about-card">
+          <div class="about-card_content">
+            <h1 class="about-card_title">About us</h1>
+            <p class="about-card_text">
+              Welcome to <span>Borcelle Coffee</span>, where the aroma of
+              freshly brewed coffee is just the beginning. Our mission is to
+              bring the world’s best beans to your cup, while also fostering a
+              space where everyone feels at home. We’re committed to
+              sustainability, from our eco-friendly practices to our locally
+              sourced ingredients. Whether you’re here for a morning pick-me-up
+              or a late-night study session, we’re dedicated to serving you
+              excellence with a side of warmth and hospitality.
+            </p>
+          </div>
+
+          <div class="about-carousel">
+              <div class="about-slides">
+                <div class="about-slide-image active">
+                  <img
+                    src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="coffee shop interior - various types of seating, a large green plant, a chalkboard wall menu behind the bar and shelves displaying various bottles."
+                  />
+                </div>
+                <div class="about-slide-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="coffee beans, coffee grounds and a latte displayed on a wooden table and two wooden boards."
+                  />
+                </div>
+                <div class="about-slide-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1633420840567-d5c4cbdffe57?q=80&w=1475&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="a person pouring coffeee in a brown takeaway cup."
+                  />
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!--  CONTACT  -->
+
+    <section class="contact-us">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Last Name:</label>
+          <input type="text" id="subject" name="subject" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" id="send-btn">Send</button>
+      </form>
+    </section>
+
+    <!--  FOOTER  -->
+
+    <footer>
+      <div class="footer">
+        <ul>
+          <li><a href="#">one</a></li>
+          <li><a href="#">two</a></li>
+          <li><a href="#">three</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="login.css" />
+    <script defer src="script.js"></script>
+    <title>Document</title>
+  </head>
+  <!-- 
+NAV
+-->
+
+  <header>
+    <nav>
+      <button id="hamburger-btn">☰</button>
+      <div class="nav-left">
+        <ul>
+          <li>
+            <button type="button" id="settings-btn">
+              <i class="fa-solid fa-gear fa-xl" title="open settings"></i>
+            </button>
+          </li>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="logo">
+        <a href="/index.html"
+          ><img
+            src="./assets/coffeeLogoWhite.png"
+            alt="Logo"
+            id="logo-img"
+            width="50"
+            height="50"
+        /></a>
+      </div>
+
+      <div class="nav-right">
+        <ul>
+          <li><a href="#">Login</a></li>
+          <li>
+            <a href="#"
+              ><i
+                class="fa-brands fa-instagram fa-xl"
+                title="open settings"
+              ></i>
+            </a>
+          </li>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- SETTINGS MODAL -->
+
+  <div id="modal-container" aria-modal="true">
+    <div class="modal">
+      <button id="close-btn">
+        <i
+          class="fa-solid fa-close fa-xl"
+          aria-label="close settings"
+          title="close settings"
+        ></i>
+      </button>
+
+      <h2>CONFIGURE SETTINGS</h2>
+
+      <section class="modal-section" id="modal-1">
+        <label for="font-options">Font Style</label>
+        <select class="modal-option" name="font" id="font-options">
+          <option value="regular">Default</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Bionic Reading">Fast Font</option>
+          <option value="Dyslexic">Open Dyslexic</option>
+        </select>
+        <p id="modal-link-1">
+          <a href="https://born2root.github.io/Fast-Font/" target="_blank"
+            >Fast Font:</a
+          >
+          Highlights the first few letters of a word in bold.
+        </p>
+        <p id="modal-link-2">
+          <a href="https://opendyslexic.org/" target="_blank">Open Dyslexic:</a>
+          Letters have heavy weighted bottoms to indicate direction.
+        </p>
+      </section>
+
+      <section class="modal-section" id="modal-2">
+        <p>Font size</p>
+        <button class="modal-option" id="increase-btn">increase</button>
+        <button class="modal-option" id="decrease-btn">decrease</button>
+        <button class="modal-option" id="font-size-reset-btn">
+          reset size
+        </button>
+      </section>
+
+      <section class="modal-section" id="modal-3">
+        <p>Colour theme</p>
+        <button class="modal-option" id="light-theme">
+          light background (default)
+        </button>
+        <button class="modal-option" id="dark-theme">dark background</button>
+        <button class="modal-option" id="black-white-theme">
+          black and white
+        </button>
+      </section>
+
+      <button id="reset-btn">reset all</button>
+    </div>
+  </div>
+
+  <body>
+    <!--  -->
+    <section class="section-login">
+    <div class="wrapper">
+      <form action="">
+        <h1>Login</h1>
+        <div class="input-box">
+          <input type="text" name="" placeholder="username" required />
+          <!-- <FaUser class="icon"/>
+ -->
+        </div>
+        <div class="input-box">
+          <input type="password" name="" placeholder="password" required />
+          <!-- <FaLock class="icon"/>
+ -->
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" />Remember Me</label>
+        </div>
+        <button type="submit">LOGIN</button>
+        <div class="register-link">
+          <p>Don't have an account? <a href="#">Register</a></p>
+        </div>
+      </form>
+    </div>
+</section>
+
+
+  </body>
+</html>
