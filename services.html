@@ -7,10 +7,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
     <title>Document</title>
   </head>
+
   <!-- 
 NAV
 -->
@@ -44,7 +45,7 @@ NAV
 
       <div class="nav-right">
         <ul>
-          <li><a href="#">Login</a></li>
+          <li><a href="/login.html">Login</a></li>
           <li>
             <a href="#"
               ><i
@@ -117,33 +118,78 @@ NAV
     </div>
   </div>
 
+  <!--  
+  MAIN
+  -->
+
   <body>
-    <!--  -->
-    <section class="section-login">
-    <div class="wrapper">
-      <form action="">
-        <h1>Login</h1>
-        <div class="input-box">
-          <input type="text" name="" placeholder="username" required />
-          <!-- <FaUser class="icon"/>
- -->
-        </div>
-        <div class="input-box">
-          <input type="password" name="" placeholder="password" required />
-          <!-- <FaLock class="icon"/>
- -->
-        </div>
-        <div class="remember-forgot">
-          <label><input type="checkbox" />Remember Me</label>
-        </div>
-        <button type="submit">LOGIN</button>
-        <div class="register-link">
-          <p>Don't have an account? <a href="#">Register</a></p>
-        </div>
-      </form>
-    </div>
-</section>
+    <section>
+      <div class="section-about">
+        <div class="about-card">
+          <div class="about-card_content">
+            <h1 class="about-card_title">Colour palette</h1>
+            <p class="about-card_text">click to open image in new tab</p>
+          </div>
 
+          <div class="palette-image">
+            <img
+            id="colour-palette"
+              src="./assets/colours.png"
+              alt="a grid table displaying accessible colour combinations used on this website. Colour values are measured in HEX code."
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
+        <!-- SETTINGS MODAL -->
+
+        <div id="modal-container" aria-modal="true">
+          <div class="modal">
+            <button id="close-btn">
+              <i class="fa-solid fa-close fa-xl" aria-label="close settings" title="close settings"></i>
+            </button>
+      
+            <h2>
+              CONFIGURE SETTINGS
+            </h2>
+      
+      <img src="./assets/colours.png" alt="">
+      
+          </div>
+        </div>
+    
+
+    <!--  CARDS  -->
+
+    <section>
+      <div class="section-cards">
+        <ul class="ul-cards">
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_content">
+                <h2 class="card_title">Light Theme (default)</h2>
+                <p class="card_text">
+                  :root { <br />
+                  --black-background: #000000;<br />
+                  --dark-background: #234234;<br />
+                  --medium-background: #35664f;<br />
+                  --bright-background: #89e2a1;<br />
+                  --light-background: #9bc2ac;<br />
+                  --white-background: #ffffff;<br />
+                  --alert: #a11212;<br />
+                  --white-text: #ffffff;<br />
+                  --light-text: #9bc2ac;<br />
+                  --bright-text: #89e2a1;<br />
+                  --medium-text: #35664f;<br />
+                  --dark-text: #234234;<br />
+                  --black-text: #000000; }
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
   </body>
 </html>

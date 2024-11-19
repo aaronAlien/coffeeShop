@@ -12,6 +12,8 @@ const themeDark = document.getElementById("dark-theme");
 const blackWhiteTheme = document.getElementById("black-white-theme");
 const resetButton = document.getElementById("reset-btn");
 const logo = document.getElementById('logo-img');
+const palette = document.getElementById('colour-palette');
+
 
 // HAMBURGER MENU
 
@@ -200,4 +202,13 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-// https://placehold.co/600x400
+/* COLOUR PALETTE IMAGE */
+
+palette.addEventListener('click', () => {
+  const paletteImage = './assets/colours.png';
+  const newTab = window.open(paletteImage, '_blank');
+
+  if (!newTab) {
+    alert('Popup blocked. Image opens in new tab.');
+  }
+});
