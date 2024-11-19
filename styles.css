@@ -249,6 +249,7 @@ select {
   overflow: hidden;
   margin: 0 auto;
   position: relative;
+
 }
 
 .carousel-slides {
@@ -274,6 +275,8 @@ select {
 .slide-image img {
   max-width: 100%;
   height: auto;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .slide-image.active {
@@ -289,8 +292,8 @@ select {
 }
 
 .about-carousel {
-  width: 100%;
-  height: auto;
+  width: 60%;
+  height: 600px;
   overflow: hidden;
   margin: 0 auto;
   position: relative;
