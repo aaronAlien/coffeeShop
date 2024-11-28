@@ -254,33 +254,32 @@ select {
   color: var(--white-text);
 }
 
-.wrapper {
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 2rem 0;
+  margin: 3rem auto;
   background-color: rgba(137, 226, 161, 0); /* light bg */
   border: 4px solid #9bc2ac;
   backdrop-filter: blur(30px);
   border-radius: 0.8rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.883);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  width: 50%;
-  padding: 2rem 0;
-  margin: 3rem auto;
 }
 
-.wrapper h1 {
+.container h1 {
   font-size: 36px;
   text-align: center;
   color: var(--light-text);
 }
 
-.wrapper .input-box {
+.container .input-box {
   position: relative;
   width: 100%;
   height: 50px;
-  margin: 2rem 0;
+  margin: 2rem auto 4rem auto;
 }
 
 .input-box input {
@@ -294,6 +293,7 @@ select {
   font-size: 16px;
   color: var(--white-text);
   padding: 20px 45px 20px 20px;
+  margin: 1rem auto 2.5rem auto;
 }
 
 .input-box input::placeholder {
@@ -302,25 +302,37 @@ select {
 
 .remember-forgot {
   display: flex;
-  justify-content: space-between;
-  font-size: 14.5px;
-  margin: -15px 0 15px;
+  align-items: center;
+  justify-content: center;
+  font-size: .85rem;
+  margin: 3rem auto 1rem auto;
 }
 
-.wrapper button {
+.remember-forgot input {
+  margin-right: .5rem;
+}
+
+.container button {
   width: 100%;
   height: 45px;
   background: var(--light-background);
   border: none;
   border-radius: 40px;
-  box-shadow: 0 0 10px #6c6c6c;
+  box-shadow: 0 0 5px #6c6c6c;
   cursor: pointer;
   font-size: 16px;
-  color: var(--white-text);
+  color: var(--black-text);
   font-weight: 700;
 }
 
-.wrapper .register-link {
+.container button:hover {
+  transition: all 300ms ease-in-out;
+  background-color: transparent;
+  box-shadow: 0 0 5px rgba(155, 194, 172, 0.336);
+  color: var(--white-text);
+}
+
+.container .register-link {
   font-size: 14.5px;
   text-align: center;
   margin: 20px 0 15px;
@@ -334,6 +346,32 @@ select {
 
 .register-link p a:hover {
   text-decoration: underline;
+}
+
+/* FOOTER */
+
+.footer {  
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--white-background);
+  list-style: none;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.footer ul,
+.footer a {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  text-decoration: none;
+  gap: 2rem;
+  color: var(--medium-text);
 }
 
 /* M E D I A */
@@ -391,7 +429,7 @@ select {
     margin: 0 auto;
   }
 
-  .wrapper {
+  .container {
     width: 90%;
   }
 
@@ -399,7 +437,7 @@ select {
     padding: 0 2rem;
   }
 
-  .wrapper button {
+  .container button {
     max-width: 60%;
     display: block;
   }
@@ -524,6 +562,20 @@ body.dark-theme .about-card_text {
   color: var(--light-text);
 }
 
+body.dark-theme .container {
+  border: 4px solid var(--medium-background);
+}
+
+body.dark-theme .container button {
+  background-color: var(--dark-background);
+  color: var(--white-text);
+}
+body.dark-theme .container button:hover {
+  transition: all 300ms ease-in-out;
+  background-color: transparent;
+  box-shadow: 0 0 5px rgb(35, 66, 52, 0.336);
+}
+
 /* BLACK AND WHITE THEME */
 
 body.black-white-theme {
@@ -630,4 +682,33 @@ body.black-white-theme .about-card_text {
 
 body.black-white-theme .about-card {
   background-color: var(--black-background);
+}
+
+body.black-white-theme .container {
+  border: 4px solid var(--black-background);
+}
+
+body.black-white-theme .container h1 {
+  color: var(--white-text);
+}
+
+body.black-white-theme .container button {
+  background-color: var(--black-background);
+  color: var(--white-text);
+}
+body.black-white-theme .container button:hover {
+  transition: all 300ms ease-in-out;
+  background-color: transparent;
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.336);
+}
+
+body.black-white-theme .register-link p a {
+  color: var(--white-text);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+body.black-white-theme .input-box input {
+  color: var(--black-text);
+  border: 2px solid var(--black-background);
 }

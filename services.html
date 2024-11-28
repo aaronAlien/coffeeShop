@@ -17,23 +17,35 @@ NAV
 -->
 
   <header>
-    <nav>
-      <button id="hamburger-btn">☰</button>
+    <nav aria-label="Main Navigation">
+      <button
+        id="hamburger-btn"
+        aria-label="Toggle Navigation Menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
       <div class="nav-left">
-        <ul>
+        <ul aria-label="Site Pages Navigation">
           <li>
-            <button type="button" id="settings-btn">
+            <button
+              type="button"
+              id="settings-btn"
+              aria-label="Open Settings Menu"
+            >
               <i class="fa-solid fa-gear fa-xl" title="open settings"></i>
             </button>
           </li>
-          <li><a href="/coffeeShop">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/coffeeShop/about.html">About</a></li>
-          <li><a href="/coffeeShop/services.html">Services</a></li>
+          <li>
+            <a href="/coffeeShop/services.html" aria-current="page">Services</a>
+          </li>
         </ul>
       </div>
 
       <div class="logo">
-        <a href="/index.html"
+        <a href="/coffeeShop/index.html"
           ><img
             src="./assets/coffeeLogoWhite.png"
             alt="Logo"
@@ -44,17 +56,19 @@ NAV
       </div>
 
       <div class="nav-right">
-        <ul>
+        <ul aria-label="Login and Social Navigation">
           <li><a href="/coffeeShop/login.html">Login</a></li>
           <li>
-            <a href="#"
-              ><i
-                class="fa-brands fa-instagram fa-xl"
-                title="open settings"
-              ></i>
+            <a
+              href="instagram.com"
+              target="_blank"
+              aria-label="Visit Instagram Page"
+              ><i class="fa-brands fa-instagram fa-xl" aria-hidden="true"></i>
             </a>
           </li>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="#"
+            ><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i
+          ></a>
         </ul>
       </div>
     </nav>
@@ -62,14 +76,10 @@ NAV
 
   <!-- SETTINGS MODAL -->
 
-  <div id="modal-container" aria-modal="true">
+  <div id="modal-container" aria-modal="true" role="dialog">
     <div class="modal">
       <button id="close-btn">
-        <i
-          class="fa-solid fa-close fa-xl"
-          aria-label="close settings"
-          title="close settings"
-        ></i>
+        <i class="fa-solid fa-close fa-xl" aria-label="close settings menu"></i>
       </button>
 
       <h2>CONFIGURE SETTINGS</h2>
@@ -133,7 +143,7 @@ NAV
 
           <div class="palette-image">
             <img
-            id="colour-palette"
+              id="colour-palette"
               src="./assets/colours.png"
               alt="a grid table displaying accessible colour combinations used on this website. Colour values are measured in HEX code."
             />
@@ -142,23 +152,23 @@ NAV
       </div>
     </section>
 
-        <!-- SETTINGS MODAL -->
+    <!-- SETTINGS MODAL -->
 
-        <div id="modal-container" aria-modal="true">
-          <div class="modal">
-            <button id="close-btn">
-              <i class="fa-solid fa-close fa-xl" aria-label="close settings" title="close settings"></i>
-            </button>
-      
-            <h2>
-              CONFIGURE SETTINGS
-            </h2>
-      
-      <img src="./assets/colours.png" alt="">
-      
-          </div>
-        </div>
-    
+    <div id="modal-container" aria-modal="true">
+      <div class="modal">
+        <button id="close-btn">
+          <i
+            class="fa-solid fa-close fa-xl"
+            aria-label="close settings"
+            title="close settings"
+          ></i>
+        </button>
+
+        <h2>CONFIGURE SETTINGS</h2>
+
+        <img src="./assets/colours.png" alt="" />
+      </div>
+    </div>
 
     <!--  CARDS  -->
 
@@ -191,5 +201,15 @@ NAV
         </ul>
       </div>
     </section>
+    <!--  FOOTER  -->
+
+    <footer>
+      <div class="footer">
+        <ul>
+          <li><a href="https://github.com/aaronAlien/">by AHS</a></li>
+          <li><a href="#">+44 20 XXXX XXXX</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

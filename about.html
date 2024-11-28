@@ -17,23 +17,35 @@ NAV
 -->
 
   <header>
-    <nav>
-      <button id="hamburger-btn">☰</button>
+    <nav aria-label="Main Navigation">
+      <button
+        id="hamburger-btn"
+        aria-label="Toggle Navigation Menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
       <div class="nav-left">
-        <ul>
+        <ul aria-label="Site Pages Navigation">
           <li>
-            <button type="button" id="settings-btn">
+            <button
+              type="button"
+              id="settings-btn"
+              aria-label="Open Settings Menu"
+            >
               <i class="fa-solid fa-gear fa-xl" title="open settings"></i>
             </button>
           </li>
           <li><a href="/coffeeShop">Home</a></li>
-          <li><a href="/coffeeShop/about.html">About</a></li>
+          <li>
+            <a href="/coffeeShop/about.html" aria-current="page">About</a>
+          </li>
           <li><a href="/coffeeShop/services.html">Services</a></li>
         </ul>
       </div>
 
       <div class="logo">
-        <a href="/index.html"
+        <a href="/coffeeShop/index.html"
           ><img
             src="./assets/coffeeLogoWhite.png"
             alt="Logo"
@@ -44,17 +56,19 @@ NAV
       </div>
 
       <div class="nav-right">
-        <ul>
+        <ul aria-label="Login and Social Navigation">
           <li><a href="/coffeeShop/login.html">Login</a></li>
           <li>
-            <a href="#"
-              ><i
-                class="fa-brands fa-instagram fa-xl"
-                title="open settings"
-              ></i>
+            <a
+              href="instagram.com"
+              target="_blank"
+              aria-label="Visit Instagram Page"
+              ><i class="fa-brands fa-instagram fa-xl" aria-hidden="true"></i>
             </a>
           </li>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="#"
+            ><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i
+          ></a>
         </ul>
       </div>
     </nav>
@@ -62,14 +76,10 @@ NAV
 
   <!-- SETTINGS MODAL -->
 
-  <div id="modal-container" aria-modal="true">
+  <div id="modal-container" aria-modal="true" role="dialog">
     <div class="modal">
       <button id="close-btn">
-        <i
-          class="fa-solid fa-close fa-xl"
-          aria-label="close settings"
-          title="close settings"
-        ></i>
+        <i class="fa-solid fa-close fa-xl" aria-label="close settings menu"></i>
       </button>
 
       <h2>CONFIGURE SETTINGS</h2>
@@ -140,29 +150,28 @@ NAV
             </p>
           </div>
 
-          <div class="about-carousel">
-              <div class="about-slides">
-                <div class="about-slide-image active">
-                  <img
-                    src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="coffee shop interior - various types of seating, a large green plant, a chalkboard wall menu behind the bar and shelves displaying various bottles."
-                  />
-                </div>
-                <div class="about-slide-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="coffee beans, coffee grounds and a latte displayed on a wooden table and two wooden boards."
-                  />
-                </div>
-                <div class="about-slide-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1633420840567-d5c4cbdffe57?q=80&w=1475&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="a person pouring coffeee in a brown takeaway cup."
-                  />
-                </div>
+          <div class="about-carousel" aria-roledescription="image slides">
+            <div class="about-slides">
+              <div class="about-slide-image active">
+                <img
+                  src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="coffee shop interior - various types of seating, a large green plant, a chalkboard wall menu behind the bar and shelves displaying various bottles."
+                />
+              </div>
+              <div class="about-slide-image">
+                <img
+                  src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="coffee beans, coffee grounds and a latte displayed on a wooden table and two wooden boards."
+                />
+              </div>
+              <div class="about-slide-image">
+                <img
+                  src="https://images.unsplash.com/photo-1633420840567-d5c4cbdffe57?q=80&w=1475&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="a person pouring coffeee in a brown takeaway cup."
+                />
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -171,7 +180,7 @@ NAV
 
     <section class="contact-us">
       <h2>Contact Us</h2>
-      <form id="contact-form">
+      <form id="contact-form" aria-labelledby="contact-form-title">
         <div class="form-group">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
@@ -188,7 +197,9 @@ NAV
           <label for="message">Message:</label>
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
-        <button type="submit" id="send-btn">Send</button>
+        <button type="submit" id="send-btn" aria-label="Send contact form">
+          Send
+        </button>
       </form>
     </section>
 
@@ -197,9 +208,8 @@ NAV
     <footer>
       <div class="footer">
         <ul>
-          <li><a href="#">one</a></li>
-          <li><a href="#">two</a></li>
-          <li><a href="#">three</a></li>
+          <li><a href="https://github.com/aaronAlien/">by AHS</a></li>
+          <li><a href="#">+44 20 XXXX XXXX</a></li>
         </ul>
       </div>
     </footer>

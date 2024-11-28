@@ -16,23 +16,33 @@ NAV
 -->
 
   <header>
-    <nav>
-      <button id="hamburger-btn">☰</button>
+    <nav aria-label="Main Navigation">
+      <button
+        id="hamburger-btn"
+        aria-label="Toggle Navigation Menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
       <div class="nav-left">
-        <ul>
+        <ul aria-label="Site Pages Navigation">
           <li>
-            <button type="button" id="settings-btn">
+            <button
+              type="button"
+              id="settings-btn"
+              aria-label="Open Settings Menu"
+            >
               <i class="fa-solid fa-gear fa-xl" title="open settings"></i>
             </button>
           </li>
-          <li><a href="/coffeeShop/index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/coffeeShop/about.html">About</a></li>
           <li><a href="/coffeeShop/services.html">Services</a></li>
         </ul>
       </div>
 
       <div class="logo">
-        <a href="/index.html"
+        <a href="/coffeeShop/index.html"
           ><img
             src="./assets/coffeeLogoWhite.png"
             alt="Logo"
@@ -43,17 +53,19 @@ NAV
       </div>
 
       <div class="nav-right">
-        <ul>
-          <li><a href="#">Login</a></li>
+        <ul aria-label="Login and Social Navigation">
+          <li><a href="/coffeeShop/login.html">Login</a></li>
           <li>
-            <a href="#"
-              ><i
-                class="fa-brands fa-instagram fa-xl"
-                title="open settings"
-              ></i>
+            <a
+              href="instagram.com"
+              target="_blank"
+              aria-label="Visit Instagram Page"
+              ><i class="fa-brands fa-instagram fa-xl" aria-hidden="true"></i>
             </a>
           </li>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="#"
+            ><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i
+          ></a>
         </ul>
       </div>
     </nav>
@@ -61,14 +73,10 @@ NAV
 
   <!-- SETTINGS MODAL -->
 
-  <div id="modal-container" aria-modal="true">
+  <div id="modal-container" aria-modal="true" role="dialog">
     <div class="modal">
       <button id="close-btn">
-        <i
-          class="fa-solid fa-close fa-xl"
-          aria-label="close settings"
-          title="close settings"
-        ></i>
+        <i class="fa-solid fa-close fa-xl" aria-label="close settings menu"></i>
       </button>
 
       <h2>CONFIGURE SETTINGS</h2>
@@ -119,31 +127,55 @@ NAV
 
   <body>
     <!--  -->
-    <section class="section-login">
-    <div class="wrapper">
-      <form action="">
-        <h1>Login</h1>
-        <div class="input-box">
-          <input type="text" name="" placeholder="username" required />
-          <!-- <FaUser class="icon"/>
- -->
-        </div>
-        <div class="input-box">
-          <input type="password" name="" placeholder="password" required />
-          <!-- <FaLock class="icon"/>
- -->
-        </div>
-        <div class="remember-forgot">
-          <label><input type="checkbox" />Remember Me</label>
-        </div>
-        <button type="submit">LOGIN</button>
-        <div class="register-link">
-          <p>Don't have an account? <a href="#">Register</a></p>
-        </div>
-      </form>
-    </div>
-</section>
+    <section class="section-login" aria-labelledby="login-title">
+      <div class="container">
+        <form aria-label="Login Form">
+          <h1>Login</h1>
+          <div class="input-box">
 
+            <label for="email" id="label-email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="mynameisjoe@gmail.com"
+              required
+              aria-required="true"
+            />
+          </div>
 
+          <div class="input-box">
+            <label for="password" id="label-password">Password:</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="password"
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <div class="remember-forgot">
+            <label><input type="checkbox" aria-label="Remember Me"/> Remember Me</label>
+          </div>
+
+          <button type="submit" id="login-btn" aria-label="Login to your account">Login</button>
+          <div class="register-link">
+            <p>Don't have an account? <a href="#" aria-label="Register for a new account">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </section>
   </body>
+  <!--  FOOTER  -->
+
+  <footer>
+    <div class="footer">
+      <ul>
+        <li><a href="https://github.com/aaronAlien/">by AHS</a></li>
+        <li><a href="#">+44 20 XXXX XXXX</a></li>
+      </ul>
+    </div>
+  </footer>
 </html>

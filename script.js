@@ -2,6 +2,7 @@ const body = document.body;
 const hamburger = document.getElementById("hamburger-btn")
 const settingsButton = document.getElementById("settings-btn");
 const closeButton = document.getElementById("close-btn");
+const loginButton = document.getElementById('login-btn');
 const modalContainer = document.getElementById("modal-container");
 const fontOptions = document.getElementById("font-options");
 const increaseButton = document.getElementById("increase-btn");
@@ -13,10 +14,10 @@ const blackWhiteTheme = document.getElementById("black-white-theme");
 const resetButton = document.getElementById("reset-btn");
 const logo = document.getElementById('logo-img');
 const palette = document.getElementById('colour-palette');
+const extraElements = document.querySelectorAll('.section-cards, .ul-cards, cards-item');
 
 
 // HAMBURGER MENU
-
 hamburger.addEventListener("click", function () {
   const navMenu = document.querySelector(".nav-left ul");
   navMenu.classList.toggle("active");
@@ -70,20 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* MODAL */
 
-// open modal
 const openModal = () => {
   modalContainer.style.display = "flex";
 };
 
-//close modal
 const closeModal = () => {
   modalContainer.style.display = "none";
 };
 
-// settings button listener
 settingsButton.addEventListener("click", openModal);
 
-// close button listener
 closeButton.addEventListener("click", closeModal);
 
 //close click outside
@@ -95,7 +92,6 @@ window.onclick = (e) => {
 
 /* CHANGE FONT */
 
-// update font function
 function changeFont(fontValue) {
   if (fontValue === "regular") {
     body.style.fontFamily = "Funnel Display, sans-serif";
@@ -113,7 +109,7 @@ fontOptions.addEventListener("change", () => {
   const selectedValue = fontOptions.value;
 
   changeFont(selectedValue);
-  localStorage.setItem("userFont", selectedValue); // save to local
+  localStorage.setItem("userFont", selectedValue); 
 });
 
 /* FONT SIZE */
@@ -123,6 +119,10 @@ const increase = () => {
   const newFontSize = currentFontSize + 4;
   body.style.fontSize = `${newFontSize}px`;
   localStorage.setItem("userFontSize", newFontSize);
+
+  extraElements.forEach(element => {
+    element.fontSize = `${newFontSize}`;
+  });
 };
 
 const decrease = () => {
@@ -130,13 +130,16 @@ const decrease = () => {
   const newFontSize = currentFontSize - 4;
   body.style.fontSize = `${newFontSize}px`;
   localStorage.setItem("userFontSize", newFontSize);
+
+  extraElements.forEach(element => {
+    element.fontSize = `${newFontSize}`;
+  });
 };
 
 const resetFontSize = () => {
   body.style.fontSize = "16px";
 };
 
-// button listeners
 increaseButton.addEventListener("click", increase);
 decreaseButton.addEventListener("click", decrease);
 fontSizeResetButton.addEventListener("click", resetFontSize);
@@ -145,7 +148,7 @@ fontSizeResetButton.addEventListener("click", resetFontSize);
 
 const changeTheme = (theme) => {
     body.className = '';
-    body.classList.add(theme); // selected theme
+    body.classList.add(theme); 
 
     if (theme === 'light-theme') {
       logo.src = './assets/coffeeLogoWhite.png';
@@ -170,6 +173,18 @@ const changeTheme = (theme) => {
   }
   resetButton.addEventListener('click', resetStyles);
   
+
+/* LOGIN FORM */
+
+loginButton.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  alert('Login Successful. Welcome back, Coffee Lover!');
+  window.location.href = '/index.html';
+  
+});
+
+
 /* LOCAL STORAGE */
 
 // font family
@@ -177,7 +192,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const userFont = localStorage.getItem("userFont");
     if (userFont) {
       changeFont(userFont);
-      fontOptions.value = userFont; // dropdown value
+      fontOptions.value = userFont;
     }
   
   });
@@ -186,9 +201,10 @@ window.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("DOMContentLoaded", () => {
     const userFontSize = localStorage.getItem('userFontSize');
     if (userFontSize) {
-      body.style.fontSize = `${userFontSize}px`; //selected size
+      body.style.fontSize = `${userFontSize}px`; 
+      section.style.fontSize = `${userFontSize}px`;
     } else {
-      body.style.fontSize = '16px'; //default
+      body.style.fontSize = '16px'; 
     }
   });
   
