@@ -180,8 +180,8 @@ loginButton.addEventListener('click', (e) => {
   e.preventDefault();
 
   alert('Login Successful. Welcome back, Coffee Lover!');
-  window.location.href = '/index.html';
-  
+  window.location.href = '/coffeeShop/index.html';
+
 });
 
 
