@@ -433,7 +433,6 @@ select {
 }
 
 .ul-cards .cards-item:last-of-type .card_image img {
-  border: 2px solid #35664f73;
   height: 380px;
 }
 
@@ -503,7 +502,7 @@ form {
   flex-wrap: wrap;
   background-color: rgba(137, 226, 161, 0.4);
   padding: 2rem;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .form-group,
@@ -511,11 +510,15 @@ form {
 .form-group textarea {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 60%;
   gap: 1rem;
   border: none;
   padding: 0.8rem;
   border-radius: 8px;
+}
+
+input, textarea {
+  background: rgba(255, 255, 255, 0.781);
 }
 
 .form-group label {
@@ -526,13 +529,21 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  padding: 0.5rem;
+  margin: 2rem auto auto auto;
+  background: var(--light-background);
   border: none;
-  border-radius: 0.25rem;
-  font-size: 1rem;
+  padding: .5rem .8rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
   cursor: pointer;
-  width: 50%;
+  max-width: 80%;
+  text-transform: uppercase;
+  font-family: inherit;
+  transition: all 300ms ease-in-out;
+}
+
+#send-btn:hover {
+  opacity: 30%;
 }
 
 /* FOOTER */
